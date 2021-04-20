@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Planner</title>
+    <link rel="stylesheet" href="css/index.css"></link>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <meta name="color-scheme" content="light dark">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Extended" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdn.jottocraft.com/fluid/v5.min.css" media="screen,projection"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jottocraft.com/fluid/v5.min.js"></script>
+</head>
+<body>
+    <div class="app">
+        <h2 class="app-header">Aufgaben</h2>
+        <script>
+            anime({
+                targets: '.app-header',
+                duration: 1000,
+                opacity: [0, 1],
+                easing: 'easeInOutExpo',
+                translateX: 10
+            });
+        </script>
+        <div class="app-add">
+            <input class="inputIcon app-add-input" placeholder="Aufgabe ..." />
+            <button class="btn app-add-button">Neu</button>            
+        </div>
+        <div class="app-tasks list select multiple">
+        </div>
+        <script>
+            anime({
+                targets: '.app-tasks',
+                duration: 1000,
+                opacity: [0, 1],
+                easing: 'easeInOutExpo',
+                translateY: 10
+            });
+        </script>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
