@@ -33,4 +33,4 @@ def update_tasks():
     update_tasks_file(tasks_content)
     return ""
 
-app.run()
+app.run(host="0.0.0.0", port=80)
