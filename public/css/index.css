@@ -23,3 +23,12 @@ body {
 .task {
 
 }
+
+.app-tasks .item {
+    user-select: none;
+    margin: 10px 0 !important;
+}
+
+.app .list .item:not(.active) {
+    background-color: var(--elements);
+}
