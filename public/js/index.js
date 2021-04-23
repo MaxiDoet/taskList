@@ -11,8 +11,8 @@ function addTask(title, done, id) {
     */
 
     let task = document.createElement("div");
-    task.className = "item";
-    task.dataset.taskId = id;  
+    task.className = "item task";
+    task.dataset.taskId = id;
 
     if (done) {
         task.classList.add("active");
@@ -30,7 +30,7 @@ function addTask(title, done, id) {
             changeTask(id, true);
         }
     });
-    
+
     let taskIcon = document.createElement("i");
     taskIcon.className = "fluid-icon";
 
@@ -41,9 +41,18 @@ function addTask(title, done, id) {
     let taskText = document.createElement("span");
     taskText.textContent = title;
 
+    let taskDelete = document.createElement("span");
+    taskDelete.className = "task-delete material-icons";
+    taskDelete.textContent = "delete";
+
+    taskDelete.addEventListener("click", function() {
+       
+    });
+
     taskIcon.appendChild(taskSpan);
     task.appendChild(taskIcon);
     task.appendChild(taskText);
+    task.appendChild(taskDelete);
 
     taskList.appendChild(task);
 
