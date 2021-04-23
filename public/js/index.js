@@ -46,7 +46,7 @@ function addTask(title, done, id) {
     taskDelete.textContent = "delete";
 
     taskDelete.addEventListener("click", function() {
-       
+       removeTask(id);
     });
 
     taskIcon.appendChild(taskSpan);
@@ -59,6 +59,17 @@ function addTask(title, done, id) {
     tasks[id] = {title: title, done: done};
 
     postUpdate(JSON.stringify(tasks));
+}
+
+function removeTask(id) {
+    for (let i = 0; i < taskList.children.length; i++) {
+        if (taskList.children[i].dataset.taskId == id) {
+            taskList.children[i].remove();
+            delete tasks[id];
+
+            postUpdate(JSON.stringify(tasks));
+        }
+    }
 }
 
 function changeTask(id, done) {
