@@ -100,6 +100,7 @@ function postUpdate(content) {
 addTextButton.addEventListener("click", function() {
     if (addTextInput.value != "") {
         addTask(addTextInput.value, false, Math.floor(Math.random() * 100000));
+	addTextInput.value = "";
     } else {
 
     }
