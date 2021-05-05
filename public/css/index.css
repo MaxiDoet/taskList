@@ -28,17 +28,49 @@ body {
     vertical-align: top;
     color: #ff9797;
     position: relative;
+    transform: translateX(5px);
 }
 
 .task:hover > .task-delete {
+    transform: translateX(-5px);
     opacity: 1;
 }
+
+.task.active > .task-status {
+    animation: task-status-in 0.4s forwards;
+}
+
+@keyframes task-status-in {
+	from {
+		transform: scale(0, 0);
+	}
+	to {
+		transform: scale(1, 1);
+	}	
+}
+
+@keyframes task-status-out {
+        from {
+                transform: scale(1, 1);
+        }
+        to {
+                transform: scale(0, 0);
+        }
+}
+
 
 .app-tasks .item {
     user-select: none;
     margin: 10px 0 !important;
+    box-shadow: none;
+    transition: 0.4s !important;
+    border-radius: 10px !important;
 }
 
 .task.item:not(.active) {
     background-color: var(--elements);
+}
+
+.task.item.active {
+    box-shadow: none !important;
 }

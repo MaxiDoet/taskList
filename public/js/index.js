@@ -32,7 +32,7 @@ function addTask(title, done, id) {
     });
 
     let taskIcon = document.createElement("i");
-    taskIcon.className = "fluid-icon";
+    taskIcon.className = "task-status fluid-icon";
 
     let taskSpan = document.createElement("span");
     taskSpan.className = "material-icons";
